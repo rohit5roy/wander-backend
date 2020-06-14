@@ -1,5 +1,6 @@
 package com.wander.backend.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @Slf4j
 @RequestMapping(value = "/api")
+@Tag(name = "Other APIs", description = "The Dashboard APIs for COVID-19 data.")
 public class OtherEndpoint {
 
     @ResponseBody

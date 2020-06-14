@@ -1,4 +1,4 @@
-package com.wander.backend.model.dto;
+package com.wander.backend.model.dto.request;
 
 /**
  * @author Rohit Roy

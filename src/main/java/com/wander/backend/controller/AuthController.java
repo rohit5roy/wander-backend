@@ -3,8 +3,8 @@ package com.wander.backend.controller;
 /**
  * @author Rohit Roy
  */
-import com.wander.backend.model.dto.LoginRequestDTO;
-import com.wander.backend.model.dto.RegisterDTO;
+import com.wander.backend.model.dto.request.LoginRequestDTO;
+import com.wander.backend.model.dto.request.RegisterDTO;
 import com.wander.backend.model.mapper.AuthMapper;
 import com.wander.backend.security.jwt.JwtResponse;
 import com.wander.backend.service.AuthService;
@@ -13,15 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
 @Controller
-@Tag(name = "Dashboard APIs", description = "The Auth APIs for catering Angular.")
+@Tag(name = "Authentication APIs", description = "The APIs for login and registration.")
 @RestController
-public class AuthEndpoint {
+public class AuthController {
 
     @Autowired
     private AuthService authService;

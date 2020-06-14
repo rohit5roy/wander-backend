@@ -6,7 +6,7 @@ package com.wander.backend.model.mapper;
 import com.wander.backend.model.Role;
 import com.wander.backend.model.User;
 import com.wander.backend.model.UserBasicInfo;
-import com.wander.backend.model.dto.RegisterDTO;
+import com.wander.backend.model.dto.request.RegisterDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.wander.backend.model.dto;
+package com.wander.backend.model.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
