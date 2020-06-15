@@ -5,12 +5,14 @@ package com.wander.backend.controller;
  */
 import com.wander.backend.model.dto.response.CountryDataDateWise;
 import com.wander.backend.model.dto.response.CountrySummary;
+import com.wander.backend.model.dto.response.CountrySummaryConversion;
 import com.wander.backend.model.dto.response.StateDetailList;
 import com.wander.backend.service.RestClientService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,6 +23,7 @@ import java.util.List;
 import java.util.Locale;
 
 @Controller
+@RequestMapping(value = "/api")
 @Tag(name = "Dashboard APIs", description = "The Dashboard APIs for COVID-19 data.")
 public class DashboardController {
 
@@ -36,7 +39,7 @@ public class DashboardController {
 
     @GetMapping("/country-summary")
     @ResponseBody
-    CountrySummary getCountrySummary()  {
+    CountrySummaryConversion getCountrySummary()  {
         return restClientService.getCountrySummary();
     }
 

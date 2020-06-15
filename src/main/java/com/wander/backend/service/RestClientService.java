@@ -1,9 +1,6 @@
 package com.wander.backend.service;
 
-import com.wander.backend.model.dto.response.CountryDataDateWise;
-import com.wander.backend.model.dto.response.CountrySummary;
-import com.wander.backend.model.dto.response.StateDataDetails;
-import com.wander.backend.model.dto.response.StateDetailList;
+import com.wander.backend.model.dto.response.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -34,10 +31,15 @@ public class RestClientService {
         return Arrays.asList(data);
     }
 
-    public CountrySummary getCountrySummary() {
+    public CountrySummaryConversion getCountrySummary() {
         String host = "http://covid19-india-adhikansh.herokuapp.com/summary";
         CountrySummary response = restTemplate.getForObject(host , CountrySummary.class);
-        return response;
+        CountrySummaryConversion summaryConversion = new CountrySummaryConversion();
+        summaryConversion.setActiveCases(response.getActiveCases());
+        summaryConversion.setCured(response.getCured());
+        summaryConversion.setDeath(response.getDeath());
+        summaryConversion.setTotal(response.getTotal());
+        return summaryConversion;
     }
 
 
