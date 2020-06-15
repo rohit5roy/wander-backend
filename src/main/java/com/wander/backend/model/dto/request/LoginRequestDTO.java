@@ -15,5 +15,4 @@ public class LoginRequestDTO {
     @NotBlank
     @JsonProperty("Password")
     private String password;
-
 }
